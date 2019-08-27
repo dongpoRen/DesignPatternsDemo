@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		70339D802313F2C400CB317C /* SelectQuestionGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70339D7F2313F2C400CB317C /* SelectQuestionGroupViewController.swift */; };
 		70339D822313F41B00CB317C /* QuestionGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70339D812313F41B00CB317C /* QuestionGroupCell.swift */; };
+		70339D8A2314D86500CB317C /* QuestionStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70339D892314D86500CB317C /* QuestionStrategy.swift */; };
+		70339D8C2314DBB200CB317C /* SequentialQuestionStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70339D8B2314DBB200CB317C /* SequentialQuestionStrategy.swift */; };
+		70339D8E2314DE5800CB317C /* RandomQuestionStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70339D8D2314DE5800CB317C /* RandomQuestionStrategy.swift */; };
 		70D51D1F2313D41500D740F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D51D1E2313D41500D740F0 /* AppDelegate.swift */; };
 		70D51D212313D41500D740F0 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D51D202313D41500D740F0 /* QuestionViewController.swift */; };
 		70D51D242313D41500D740F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70D51D222313D41500D740F0 /* Main.storyboard */; };
@@ -23,6 +26,9 @@
 /* Begin PBXFileReference section */
 		70339D7F2313F2C400CB317C /* SelectQuestionGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectQuestionGroupViewController.swift; sourceTree = "<group>"; };
 		70339D812313F41B00CB317C /* QuestionGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionGroupCell.swift; sourceTree = "<group>"; };
+		70339D892314D86500CB317C /* QuestionStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionStrategy.swift; sourceTree = "<group>"; };
+		70339D8B2314DBB200CB317C /* SequentialQuestionStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SequentialQuestionStrategy.swift; sourceTree = "<group>"; };
+		70339D8D2314DE5800CB317C /* RandomQuestionStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomQuestionStrategy.swift; sourceTree = "<group>"; };
 		70D51D1B2313D41500D740F0 /* PatternsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PatternsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70D51D1E2313D41500D740F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70D51D202313D41500D740F0 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +53,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		70339D882314D80500CB317C /* Strategies */ = {
+			isa = PBXGroup;
+			children = (
+				70339D892314D86500CB317C /* QuestionStrategy.swift */,
+				70339D8B2314DBB200CB317C /* SequentialQuestionStrategy.swift */,
+				70339D8D2314DE5800CB317C /* RandomQuestionStrategy.swift */,
+			);
+			path = Strategies;
+			sourceTree = "<group>";
+		};
 		70D51D122313D41500D740F0 = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +86,7 @@
 				70D51D312313D7B900D740F0 /* Controllers */,
 				70D51D332313D7C600D740F0 /* Models */,
 				70D51D352313D7CF00D740F0 /* Resources */,
+				70339D882314D80500CB317C /* Strategies */,
 				70D51D342313D7C900D740F0 /* Views */,
 			);
 			path = PatternsDemo;
@@ -193,13 +210,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70339D8C2314DBB200CB317C /* SequentialQuestionStrategy.swift in Sources */,
 				70D51D372313D8EF00D740F0 /* Question.swift in Sources */,
 				70D51D212313D41500D740F0 /* QuestionViewController.swift in Sources */,
+				70339D8E2314DE5800CB317C /* RandomQuestionStrategy.swift in Sources */,
 				70D51D1F2313D41500D740F0 /* AppDelegate.swift in Sources */,
 				70D51D392313D96400D740F0 /* QuestionGroup.swift in Sources */,
 				70D51D412313DC9900D740F0 /* QuestionView.swift in Sources */,
 				70D51D3D2313DB2E00D740F0 /* QuestionGroupData.swift in Sources */,
 				70339D802313F2C400CB317C /* SelectQuestionGroupViewController.swift in Sources */,
+				70339D8A2314D86500CB317C /* QuestionStrategy.swift in Sources */,
 				70339D822313F41B00CB317C /* QuestionGroupCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

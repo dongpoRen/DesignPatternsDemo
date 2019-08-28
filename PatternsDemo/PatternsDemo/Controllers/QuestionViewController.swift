@@ -84,7 +84,6 @@ public class QuestionViewController: UIViewController {
     }
     
     private func showNextQuestion() {
-        
         guard questionStrategy.advanceToNextQuestion() else {
             delegate?.questionViewController(self, didComplete: questionStrategy)
             return

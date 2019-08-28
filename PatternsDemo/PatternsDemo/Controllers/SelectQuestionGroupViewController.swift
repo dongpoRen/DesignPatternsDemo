@@ -10,16 +10,17 @@ import UIKit
 
 public class SelectQuestionViewController: UIViewController {
     
+    // MARK: - Properties
+    public let questionGroups = QuestionGroup.allGroups()
+    public var selectedQuestionGroup: QuestionGroup!
+    private let appSettings = AppSettings.shared
+    
     /// Outlets
     @IBOutlet var tableView: UITableView! {
         didSet {
             tableView.tableFooterView = UIView()
         }
     }
-    
-    public let questionGroups = QuestionGroup.allGroups()
-    public var selectedQuestionGroup: QuestionGroup!
-    
 }
 
 extension SelectQuestionViewController: UITableViewDataSource {
@@ -51,8 +52,7 @@ extension SelectQuestionViewController: UITableViewDelegate {
     public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let viewController = segue.destination as? QuestionViewController else { return }
         viewController.delegate = self
-        viewController.questionStrategy = RandomQuestionStrategy(questionGroup: selectedQuestionGroup)
-        //        viewController.questionStrategy = SequentialQuestionStrategy(questionGroup: selectedQuestionGroup)
+        viewController.questionStrategy = appSettings.questionStrategy(for: selectedQuestionGroup)
     }
 }
 

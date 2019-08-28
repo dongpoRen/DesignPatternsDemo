@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		702EEEA2231622EE00DE7641 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702EEEA1231622EE00DE7641 /* AppSettings.swift */; };
+		702EEEA42316294A00DE7641 /* AppSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702EEEA32316294A00DE7641 /* AppSettingsViewController.swift */; };
 		70339D802313F2C400CB317C /* SelectQuestionGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70339D7F2313F2C400CB317C /* SelectQuestionGroupViewController.swift */; };
 		70339D822313F41B00CB317C /* QuestionGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70339D812313F41B00CB317C /* QuestionGroupCell.swift */; };
 		70339D8A2314D86500CB317C /* QuestionStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70339D892314D86500CB317C /* QuestionStrategy.swift */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		702EEEA1231622EE00DE7641 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		702EEEA32316294A00DE7641 /* AppSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsViewController.swift; sourceTree = "<group>"; };
 		70339D7F2313F2C400CB317C /* SelectQuestionGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectQuestionGroupViewController.swift; sourceTree = "<group>"; };
 		70339D812313F41B00CB317C /* QuestionGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionGroupCell.swift; sourceTree = "<group>"; };
 		70339D892314D86500CB317C /* QuestionStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionStrategy.swift; sourceTree = "<group>"; };
@@ -103,6 +107,7 @@
 		70D51D312313D7B900D740F0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				702EEEA32316294A00DE7641 /* AppSettingsViewController.swift */,
 				70339D7F2313F2C400CB317C /* SelectQuestionGroupViewController.swift */,
 				70D51D202313D41500D740F0 /* QuestionViewController.swift */,
 			);
@@ -115,6 +120,7 @@
 				70D51D362313D8EF00D740F0 /* Question.swift */,
 				70D51D382313D96400D740F0 /* QuestionGroup.swift */,
 				70D51D3C2313DB2E00D740F0 /* QuestionGroupData.swift */,
+				702EEEA1231622EE00DE7641 /* AppSettings.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -212,11 +218,13 @@
 			files = (
 				70339D8C2314DBB200CB317C /* SequentialQuestionStrategy.swift in Sources */,
 				70D51D372313D8EF00D740F0 /* Question.swift in Sources */,
+				702EEEA2231622EE00DE7641 /* AppSettings.swift in Sources */,
 				70D51D212313D41500D740F0 /* QuestionViewController.swift in Sources */,
 				70339D8E2314DE5800CB317C /* RandomQuestionStrategy.swift in Sources */,
 				70D51D1F2313D41500D740F0 /* AppDelegate.swift in Sources */,
 				70D51D392313D96400D740F0 /* QuestionGroup.swift in Sources */,
 				70D51D412313DC9900D740F0 /* QuestionView.swift in Sources */,
+				702EEEA42316294A00DE7641 /* AppSettingsViewController.swift in Sources */,
 				70D51D3D2313DB2E00D740F0 /* QuestionGroupData.swift in Sources */,
 				70339D802313F2C400CB317C /* SelectQuestionGroupViewController.swift in Sources */,
 				70339D8A2314D86500CB317C /* QuestionStrategy.swift in Sources */,

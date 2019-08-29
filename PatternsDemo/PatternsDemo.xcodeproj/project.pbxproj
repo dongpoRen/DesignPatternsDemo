@@ -13,6 +13,7 @@
 		702EEEA923165F9200DE7641 /* QuestionGroupCaretaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702EEEA823165F9200DE7641 /* QuestionGroupCaretaker.swift */; };
 		702EEEAB2316642900DE7641 /* QuestionGroupData.json in Resources */ = {isa = PBXBuildFile; fileRef = 702EEEAA2316642900DE7641 /* QuestionGroupData.json */; };
 		702EEEAD231667E000DE7641 /* BaseQuestionStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702EEEAC231667E000DE7641 /* BaseQuestionStrategy.swift */; };
+		702EEEAF23177C2000DE7641 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702EEEAE23177C2000DE7641 /* Observable.swift */; };
 		70339D802313F2C400CB317C /* SelectQuestionGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70339D7F2313F2C400CB317C /* SelectQuestionGroupViewController.swift */; };
 		70339D822313F41B00CB317C /* QuestionGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70339D812313F41B00CB317C /* QuestionGroupCell.swift */; };
 		70339D8A2314D86500CB317C /* QuestionStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70339D892314D86500CB317C /* QuestionStrategy.swift */; };
@@ -35,6 +36,7 @@
 		702EEEA823165F9200DE7641 /* QuestionGroupCaretaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionGroupCaretaker.swift; sourceTree = "<group>"; };
 		702EEEAA2316642900DE7641 /* QuestionGroupData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = QuestionGroupData.json; sourceTree = "<group>"; };
 		702EEEAC231667E000DE7641 /* BaseQuestionStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseQuestionStrategy.swift; sourceTree = "<group>"; };
+		702EEEAE23177C2000DE7641 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		70339D7F2313F2C400CB317C /* SelectQuestionGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectQuestionGroupViewController.swift; sourceTree = "<group>"; };
 		70339D812313F41B00CB317C /* QuestionGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionGroupCell.swift; sourceTree = "<group>"; };
 		70339D892314D86500CB317C /* QuestionStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionStrategy.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				70D51D362313D8EF00D740F0 /* Question.swift */,
 				70D51D382313D96400D740F0 /* QuestionGroup.swift */,
 				702EEEA1231622EE00DE7641 /* AppSettings.swift */,
+				702EEEAE23177C2000DE7641 /* Observable.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				702EEEAF23177C2000DE7641 /* Observable.swift in Sources */,
 				70339D8C2314DBB200CB317C /* SequentialQuestionStrategy.swift in Sources */,
 				702EEEAD231667E000DE7641 /* BaseQuestionStrategy.swift in Sources */,
 				70D51D372313D8EF00D740F0 /* Question.swift in Sources */,

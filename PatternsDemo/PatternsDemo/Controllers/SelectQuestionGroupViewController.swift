@@ -28,13 +28,6 @@ public class SelectQuestionViewController: UIViewController {
             tableView.tableFooterView = UIView()
         }
     }
-    
-    public override func viewDidLoad() {
-        super.viewDidLoad()
-        questionGroups.forEach {
-            print("\($0.title): correctCount: \($0.score.correctCount), incorrectCount: \($0.score.incorrectCount)")
-        }
-    }
 }
 
 extension SelectQuestionViewController: UITableViewDataSource {
@@ -72,9 +65,13 @@ extension SelectQuestionViewController: UITableViewDelegate {
     }
     
     public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let viewController = segue.destination as? QuestionViewController else { return }
-        viewController.delegate = self
-        viewController.questionStrategy = appSettings.questionStrategy(for: questionGroupCaretaker)
+        if let viewController = segue.destination as? QuestionViewController {
+            viewController.delegate = self
+            viewController.questionStrategy = appSettings.questionStrategy(for: questionGroupCaretaker)
+        } else if let navigationController = segue.destination as? UINavigationController,
+            let viewController = navigationController.topViewController as? CreateQuestionGroupViewController {
+            viewController.delegate = self
+        }
     }
 }
 
@@ -86,5 +83,20 @@ extension SelectQuestionViewController: QuestionViewControllerDelegate {
     
     public func questionViewController(_ viewController: QuestionViewController, didComplete questionStrategy: QuestionStrategy) {
         navigationController?.popToViewController(self, animated: true)
+    }
+}
+
+extension SelectQuestionViewController: CreateQuestionGroupViewControllerDelegate {
+    
+    public func createQuestionGroupViewControllerDidCancel(_ viewController: CreateQuestionGroupViewController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    public func createQuestionGroupViewController(_ viewController: CreateQuestionGroupViewController, created questionGroup: QuestionGroup) {
+        questionGroupCaretaker.questionGroups.append(questionGroup)
+        try? questionGroupCaretaker.save()
+        
+        dismiss(animated: true, completion: nil)
+        tableView.reloadData()
     }
 }

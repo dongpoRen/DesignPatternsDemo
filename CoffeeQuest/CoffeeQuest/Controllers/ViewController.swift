@@ -35,6 +35,7 @@ public class ViewController: UIViewController {
   private var businesses: [YLPBusiness] = []
   private let client = YLPClient(apiKey: YelpAPIKey)
   private let locationManager = CLLocationManager()
+  private let annotationFactory = AnnotationFactory()
   
   // MARK: - Outlets
   @IBOutlet public var mapView: MKMapView! {
@@ -102,33 +103,9 @@ extension ViewController: MKMapViewDelegate {
   
   private func addAnnotations() {
     for business in businesses {
-      guard let yelpCoordinate = business.location.coordinate else {
+      guard let annotation = annotationFactory.createBusinessMapViewModel(for: business) else {
         continue
       }
-
-      let coordinate = CLLocationCoordinate2D(
-        latitude: yelpCoordinate.latitude,
-        longitude: yelpCoordinate.longitude)
-      let name = business.name
-      let rating = business.rating
-      let image: UIImage
-      
-      switch rating {
-      case 0.0..<3.5:
-        image = UIImage(named: "bad")!
-      case 3.5..<4.0:
-        image = UIImage(named: "bad")!
-      case 4.0..<4.75:
-        image = UIImage(named: "good")!
-      case 4.75..<5.0:
-        image = UIImage(named: "great")!
-      default:
-        image = UIImage(named: "bad")!
-      }
-      
-      let annotation = BusinessMapViewModel(coordinate: coordinate,
-                              name: name,
-                              rating: rating, image: image)
       mapView.addAnnotation(annotation)
     }
   }

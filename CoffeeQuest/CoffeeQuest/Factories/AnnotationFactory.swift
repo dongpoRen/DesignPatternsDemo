@@ -5,15 +5,7 @@ import YelpAPI
 public class AnnotationFactory {
   
   public func createBusinessMapViewModel(
-    for business: YLPBusiness) -> BusinessMapViewModel? {
-    
-    guard let yelpCoordinate = business.location.coordinate else {
-      return nil
-    }
-    
-    let coordinate = CLLocationCoordinate2D(
-      latitude: yelpCoordinate.latitude,
-      longitude: yelpCoordinate.longitude)
+    for business: Business) -> BusinessMapViewModel? {
     
     let name = business.name
     let rating = business.rating
@@ -31,8 +23,9 @@ public class AnnotationFactory {
     default:
       image = UIImage(named: "bad")!
     }
-    return BusinessMapViewModel(coordinate: coordinate,
-                                          name: name,
-                                          rating: rating, image: image)
+    return BusinessMapViewModel(coordinate: business.location,
+                                name: name,
+                                rating: rating,
+                                image: image)
   }
 }

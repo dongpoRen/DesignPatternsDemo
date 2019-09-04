@@ -38,6 +38,8 @@ public class ViewController: UIViewController {
   // MARK: - Actions
   @IBAction public func animatePressed(_ sender: Any) {
     inputDrawView.animate()
+    mirrorDrawViews.forEach { $0.copyLines(from: inputDrawView) }
+    mirrorDrawViews.forEach { $0.animate() }
   }
 
   @IBAction public func clearPressed(_ sender: Any) {

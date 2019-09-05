@@ -14,12 +14,17 @@
 		42F35C3B20449C9A00584FAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42F35C3920449C9A00584FAD /* Main.storyboard */; };
 		42F35C3D20449C9A00584FAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42F35C3C20449C9A00584FAD /* Assets.xcassets */; };
 		42F35C4020449C9A00584FAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42F35C3E20449C9A00584FAD /* LaunchScreen.storyboard */; };
+		704A9DAB2320AEDE00F6224A /* AcceptInputState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704A9DAA2320AEDE00F6224A /* AcceptInputState.swift */; };
+		704A9DAD2320AEF400F6224A /* AnimateState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704A9DAC2320AEF400F6224A /* AnimateState.swift */; };
+		704A9DAF2320AF0600F6224A /* ClearState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704A9DAE2320AF0600F6224A /* ClearState.swift */; };
+		704A9DB12320AF1100F6224A /* CopyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704A9DB02320AF1100F6224A /* CopyState.swift */; };
+		704A9DB32320AF1A00F6224A /* DrawViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704A9DB22320AF1A00F6224A /* DrawViewState.swift */; };
 		70F80583231F62C1008E31D6 /* Coping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F80582231F62C1008E31D6 /* Coping.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		424387E320449D300056B653 /* DrawView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
-		424387E62044A1ED0056B653 /* LineShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineShape.swift; sourceTree = "<group>"; };
+		424387E320449D300056B653 /* DrawView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DrawView.swift; path = MirrorPad/Views/DrawView.swift; sourceTree = SOURCE_ROOT; };
+		424387E62044A1ED0056B653 /* LineShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LineShape.swift; path = ../LineShape.swift; sourceTree = "<group>"; };
 		42F35C3220449C9A00584FAD /* MirrorPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MirrorPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42F35C3520449C9A00584FAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42F35C3720449C9A00584FAD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -27,6 +32,11 @@
 		42F35C3C20449C9A00584FAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42F35C3F20449C9A00584FAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42F35C4120449C9A00584FAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		704A9DAA2320AEDE00F6224A /* AcceptInputState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptInputState.swift; sourceTree = "<group>"; };
+		704A9DAC2320AEF400F6224A /* AnimateState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateState.swift; sourceTree = "<group>"; };
+		704A9DAE2320AF0600F6224A /* ClearState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearState.swift; sourceTree = "<group>"; };
+		704A9DB02320AF1100F6224A /* CopyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyState.swift; sourceTree = "<group>"; };
+		704A9DB22320AF1A00F6224A /* DrawViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawViewState.swift; sourceTree = "<group>"; };
 		70F80582231F62C1008E31D6 /* Coping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coping.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -106,9 +116,8 @@
 		42F35C4920449CAA00584FAD /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				424387E320449D300056B653 /* DrawView.swift */,
+				704A9DA72320AE5000F6224A /* DrawView */,
 				42F35C3E20449C9A00584FAD /* LaunchScreen.storyboard */,
-				424387E62044A1ED0056B653 /* LineShape.swift */,
 				42F35C3920449C9A00584FAD /* Main.storyboard */,
 			);
 			path = Views;
@@ -121,6 +130,28 @@
 				42F35C4120449C9A00584FAD /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		704A9DA72320AE5000F6224A /* DrawView */ = {
+			isa = PBXGroup;
+			children = (
+				424387E320449D300056B653 /* DrawView.swift */,
+				424387E62044A1ED0056B653 /* LineShape.swift */,
+				704A9DA92320AEC300F6224A /* States */,
+			);
+			path = DrawView;
+			sourceTree = "<group>";
+		};
+		704A9DA92320AEC300F6224A /* States */ = {
+			isa = PBXGroup;
+			children = (
+				704A9DAA2320AEDE00F6224A /* AcceptInputState.swift */,
+				704A9DAC2320AEF400F6224A /* AnimateState.swift */,
+				704A9DAE2320AF0600F6224A /* ClearState.swift */,
+				704A9DB02320AF1100F6224A /* CopyState.swift */,
+				704A9DB22320AF1A00F6224A /* DrawViewState.swift */,
+			);
+			path = States;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,7 +227,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				704A9DAD2320AEF400F6224A /* AnimateState.swift in Sources */,
+				704A9DAB2320AEDE00F6224A /* AcceptInputState.swift in Sources */,
+				704A9DB12320AF1100F6224A /* CopyState.swift in Sources */,
 				42F35C3820449C9A00584FAD /* ViewController.swift in Sources */,
+				704A9DB32320AF1A00F6224A /* DrawViewState.swift in Sources */,
+				704A9DAF2320AF0600F6224A /* ClearState.swift in Sources */,
 				424387E72044A1ED0056B653 /* LineShape.swift in Sources */,
 				70F80583231F62C1008E31D6 /* Coping.swift in Sources */,
 				42F35C3620449C9A00584FAD /* AppDelegate.swift in Sources */,

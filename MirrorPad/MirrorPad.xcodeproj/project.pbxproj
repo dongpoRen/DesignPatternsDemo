@@ -19,6 +19,7 @@
 		704A9DAF2320AF0600F6224A /* ClearState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704A9DAE2320AF0600F6224A /* ClearState.swift */; };
 		704A9DB12320AF1100F6224A /* CopyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704A9DB02320AF1100F6224A /* CopyState.swift */; };
 		704A9DB32320AF1A00F6224A /* DrawViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704A9DB22320AF1A00F6224A /* DrawViewState.swift */; };
+		7066B33B2322072C0038701B /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7066B33A2322072C0038701B /* MulticastDelegate.swift */; };
 		70F80583231F62C1008E31D6 /* Coping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F80582231F62C1008E31D6 /* Coping.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		704A9DAE2320AF0600F6224A /* ClearState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearState.swift; sourceTree = "<group>"; };
 		704A9DB02320AF1100F6224A /* CopyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyState.swift; sourceTree = "<group>"; };
 		704A9DB22320AF1A00F6224A /* DrawViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawViewState.swift; sourceTree = "<group>"; };
+		7066B33A2322072C0038701B /* MulticastDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MulticastDelegate.swift; path = MirrorPad/Views/DrawView/States/MulticastDelegate.swift; sourceTree = SOURCE_ROOT; };
 		70F80582231F62C1008E31D6 /* Coping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coping.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -55,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				70F80582231F62C1008E31D6 /* Coping.swift */,
+				7066B33A2322072C0038701B /* MulticastDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 				704A9DAF2320AF0600F6224A /* ClearState.swift in Sources */,
 				424387E72044A1ED0056B653 /* LineShape.swift in Sources */,
 				70F80583231F62C1008E31D6 /* Coping.swift in Sources */,
+				7066B33B2322072C0038701B /* MulticastDelegate.swift in Sources */,
 				42F35C3620449C9A00584FAD /* AppDelegate.swift in Sources */,
 				424387E420449D300056B653 /* DrawView.swift in Sources */,
 			);

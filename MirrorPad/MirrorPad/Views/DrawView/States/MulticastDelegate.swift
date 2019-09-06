@@ -26,36 +26,44 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-import UIKit
-
-public class ViewController: UIViewController {
-
-  // MARK: - Outlets
-  @IBOutlet public var drawViewContainer: UIView!
-  @IBOutlet public var inputDrawView: DrawView!
-  @IBOutlet public var mirrorDrawViews: [DrawView]!
-
-  // MARK: - View Lifecycle
-  public override func viewDidLoad() {
-    super.viewDidLoad()
-    mirrorDrawViews.forEach {
-      inputDrawView.addDelegate($0)
+public class MulticastDelegate<T> {
+  
+  // MARK: - DelegateWrapper
+  private class DelegateWrapper {
+    
+    weak var delegate: AnyObject?
+    
+    init(_ delegate: AnyObject) {
+      self.delegate = delegate
     }
   }
   
-  // MARK: - Actions
-  @IBAction public func animatePressed(_ sender: Any) {
-    inputDrawView.animate()
-    mirrorDrawViews.forEach { $0.copyLines(from: inputDrawView) }
-    mirrorDrawViews.forEach { $0.animate() }
+  // MARK: - Instance Properties
+  public var delegates: [T] {
+    delegateWrappers = delegateWrappers.filter { $0.delegate != nil }
+    return delegateWrappers.map { $0.delegate! } as! [T]
   }
-
-  @IBAction public func clearPressed(_ sender: Any) {
-    inputDrawView.clear()
-    mirrorDrawViews.forEach { $0.clear() }
+  private var delegateWrappers: [DelegateWrapper] = []
+  
+  // MARK: - Object Lifecycle
+  public init() { }
+  
+  // MARK: - Delegate Management
+  public func addDelegate(_ delegate: T) {
+    let wrapper = DelegateWrapper(delegate as AnyObject)
+    delegateWrappers.append(wrapper)
   }
-
-  @IBAction public func sharePressed(_ sender: Any) {
-
+  
+  public func removeDelegate(_ removeDelegate: T) {
+    guard let index = delegateWrappers.index(where: {
+      $0.delegate === (removeDelegate as AnyObject)
+    }) else {
+      return
+    }
+    delegateWrappers.remove(at: index)
+  }
+  
+  public func invokeDelegates(_ closure: (T) -> ()) {
+    delegates.forEach { closure($0) }
   }
 }

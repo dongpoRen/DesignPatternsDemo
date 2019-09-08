@@ -20,6 +20,10 @@
 		704A9DB12320AF1100F6224A /* CopyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704A9DB02320AF1100F6224A /* CopyState.swift */; };
 		704A9DB32320AF1A00F6224A /* DrawViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704A9DB22320AF1A00F6224A /* DrawViewState.swift */; };
 		7066B33B2322072C0038701B /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7066B33A2322072C0038701B /* MulticastDelegate.swift */; };
+		7066B33E2324A9EC0038701B /* ImageRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7066B33C2324A9EC0038701B /* ImageRenderer.swift */; };
+		7066B33F2324A9EC0038701B /* DrawingSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7066B33D2324A9EC0038701B /* DrawingSelectionViewController.swift */; };
+		7066B3412324AAA90038701B /* ShareFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7066B3402324AAA90038701B /* ShareFacade.swift */; };
+		7066B3432324C4930038701B /* DrawingSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7066B3422324C4930038701B /* DrawingSelectionViewController.xib */; };
 		70F80583231F62C1008E31D6 /* Coping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F80582231F62C1008E31D6 /* Coping.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +43,10 @@
 		704A9DB02320AF1100F6224A /* CopyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyState.swift; sourceTree = "<group>"; };
 		704A9DB22320AF1A00F6224A /* DrawViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawViewState.swift; sourceTree = "<group>"; };
 		7066B33A2322072C0038701B /* MulticastDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MulticastDelegate.swift; path = MirrorPad/Views/DrawView/States/MulticastDelegate.swift; sourceTree = SOURCE_ROOT; };
+		7066B33C2324A9EC0038701B /* ImageRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageRenderer.swift; sourceTree = "<group>"; };
+		7066B33D2324A9EC0038701B /* DrawingSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingSelectionViewController.swift; sourceTree = "<group>"; };
+		7066B3402324AAA90038701B /* ShareFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareFacade.swift; sourceTree = "<group>"; };
+		7066B3422324C4930038701B /* DrawingSelectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawingSelectionViewController.xib; sourceTree = "<group>"; };
 		70F80582231F62C1008E31D6 /* Coping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coping.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -65,6 +73,9 @@
 		4245EC7C2074417100E347D0 /* Facades */ = {
 			isa = PBXGroup;
 			children = (
+				7066B33D2324A9EC0038701B /* DrawingSelectionViewController.swift */,
+				7066B33C2324A9EC0038701B /* ImageRenderer.swift */,
+				7066B3402324AAA90038701B /* ShareFacade.swift */,
 			);
 			path = Facades;
 			sourceTree = "<group>";
@@ -119,6 +130,7 @@
 		42F35C4920449CAA00584FAD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7066B3422324C4930038701B /* DrawingSelectionViewController.xib */,
 				704A9DA72320AE5000F6224A /* DrawView */,
 				42F35C3E20449C9A00584FAD /* LaunchScreen.storyboard */,
 				42F35C3920449C9A00584FAD /* Main.storyboard */,
@@ -217,6 +229,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7066B3432324C4930038701B /* DrawingSelectionViewController.xib in Resources */,
 				42F35C4020449C9A00584FAD /* LaunchScreen.storyboard in Resources */,
 				42F35C3D20449C9A00584FAD /* Assets.xcassets in Resources */,
 				42F35C3B20449C9A00584FAD /* Main.storyboard in Resources */,
@@ -231,9 +244,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				704A9DAD2320AEF400F6224A /* AnimateState.swift in Sources */,
+				7066B3412324AAA90038701B /* ShareFacade.swift in Sources */,
 				704A9DAB2320AEDE00F6224A /* AcceptInputState.swift in Sources */,
 				704A9DB12320AF1100F6224A /* CopyState.swift in Sources */,
 				42F35C3820449C9A00584FAD /* ViewController.swift in Sources */,
+				7066B33E2324A9EC0038701B /* ImageRenderer.swift in Sources */,
+				7066B33F2324A9EC0038701B /* DrawingSelectionViewController.swift in Sources */,
 				704A9DB32320AF1A00F6224A /* DrawViewState.swift in Sources */,
 				704A9DAF2320AF0600F6224A /* ClearState.swift in Sources */,
 				424387E72044A1ED0056B653 /* LineShape.swift in Sources */,

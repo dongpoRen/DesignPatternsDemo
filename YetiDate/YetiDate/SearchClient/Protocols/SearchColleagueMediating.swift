@@ -25,3 +25,13 @@
 /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
+import YelpAPI
+
+public protocol SearchCollegueMediating: class {
+  func searchCollegue(_ searchCollegue: SearchCollegue,
+                      didSelect business: YLPBusiness)
+  func searchCollegue(_ searchCollegue: SearchCollegue,
+                      didCreate viewModels: Set<BusinessMapViewModel>)
+  func searchCollegue(_ searchCollegue: SearchCollegue,
+                      searchFailed error: Error?)
+}

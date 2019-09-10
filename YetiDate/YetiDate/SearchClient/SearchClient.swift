@@ -29,7 +29,7 @@
 import YelpAPI
 import CoreLocation
 
-public class SearchClient: NSObject {
+public class SearchClient: Mediator<SearchCollegue> {
 
   // MARK: - Instance Properties
   public weak var delegate: SearchClientDelegate?
@@ -42,15 +42,66 @@ public class SearchClient: NSObject {
   }
 
   private func setupColleagues() {
-    // TODO: - Implement this
+    let restaurantCollegue = YelpSearchCollegue(category: .restaurants,
+                                                mediator: self)
+    addColleague(restaurantCollegue)
+    
+    let barCollegue = YelpSearchCollegue(category: .bars,
+                                         mediator: self)
+    addColleague(barCollegue)
+    
+    let movieCollegue = YelpSearchCollegue(category: .movieTheaters,
+                                           mediator: self)
+    addColleague(movieCollegue)
   }
 
   // MARK: - Instance Methods
   public func update(userCoordinate: CLLocationCoordinate2D) {
-    // TODO: - Implement this
+    invokeColleagues { collegue in
+      collegue.update(userCoordinate: userCoordinate)
+    }
   }
 
   public func reset() {
-    // TODO: - Implement this
+    invokeColleagues { collegue in
+      collegue.reset()
+    }
+  }
+}
+
+extension SearchClient: SearchCollegueMediating {
+  public func searchCollegue(_ searchCollegue: SearchCollegue,
+                             didSelect business: YLPBusiness) {
+    delegate?.searchClient(self,
+                           didSelect: business,
+                           for: searchCollegue.category)
+    
+    invokeColleagues(by: searchCollegue) { collegue in
+      collegue.fellowCollegue(collegue, didSelect: business)
+    }
+  
+  }
+  
+  private func notifyDelegateIfAllBusinessesSelected() {
+    guard let delegate = delegate else { return }
+    var categoryToBusiness: [YelpCategory: YLPBusiness] = [:]
+    for collegue in colleagues {
+      guard let business = collegue.selectedBusiness else { return }
+      categoryToBusiness[collegue.category] = business
+    }
+    delegate.searchClient(self, didCompleteSelection: categoryToBusiness)
+  }
+  
+  public func searchCollegue(_ searchCollegue: SearchCollegue, didCreate viewModels: Set<BusinessMapViewModel>) {
+    delegate?.searchClient(self,
+                           didCreate: viewModels,
+                           for: searchCollegue.category)
+  }
+  
+  public func searchCollegue(_ searchCollegue: SearchCollegue,
+                             searchFailed error: Error?) {
+    delegate?.searchClient(self,
+                           failedFor: searchCollegue.category,
+                           error: error)
   }
 }
